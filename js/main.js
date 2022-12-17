@@ -155,6 +155,17 @@ class List {
 
         return removed;
     }
+
+    /**
+     * Método que reemplaza un elemento de la lista por
+     * otro que se le pase cómo parametro en base a su indice.
+     * @param {*} element El elemento nuevo.
+     * @param {*} index La posición donde se quiere empezar a cambiar.
+     * @returns El elemento anterior.
+     */
+    set(element, index) {
+        return this.#list.splice(index, 1, element);
+    }
 }
 
 /**
