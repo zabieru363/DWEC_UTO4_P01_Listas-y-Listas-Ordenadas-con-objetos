@@ -77,6 +77,16 @@ class List {
             if(index === pos) return elem;
         });
     }
+
+    /**
+     * Método que devuelve la posición del elemento que se
+     * le pasa cómo parametro.
+     * @param {*} element El elemento del cuál se quiere obtener su posición.
+     * @returns La posición del elemento, -1 si no lo encuentra.
+     */
+    indexOf(element) {
+        return this.#list.indexOf(element);
+    }
 }
 
 /**
