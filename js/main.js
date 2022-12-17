@@ -97,6 +97,14 @@ class List {
     lastIndexOf(element) {
         return this.#list.lastIndexOf(element);
     }
+
+    /**
+     * Devuelve el número máximo de elementos que podemos tener en la lista.
+     * @returns El número máximo de elementos que podemos tener en la lista.
+     */
+    capacity() {
+        return this.#capacity;
+    }
 }
 
 /**
