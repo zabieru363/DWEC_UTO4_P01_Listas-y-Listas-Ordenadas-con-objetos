@@ -120,6 +120,10 @@ class List {
     firstElement() {
         return this.#list[0];
     }
+
+    lastElement() {
+        return this.#list[this.#list.length - 1];
+    }
 }
 
 /**
