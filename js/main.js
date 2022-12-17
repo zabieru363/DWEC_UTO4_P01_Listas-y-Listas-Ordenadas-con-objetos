@@ -30,6 +30,14 @@ class List {
     isEmpty() {
         return this.#list.length === 0;
     }
+
+    /**
+     * Método que comprueba si la lista está llena.
+     * @returns True si está llena, false si no es así.
+     */
+    isFull() {
+        return this.#list.length === this.#capacity;
+    }
 }
 
 /**
