@@ -121,8 +121,21 @@ class List {
         return this.#list[0];
     }
 
+    /**
+     * Método que devuelve el último elemento de la lista.
+     * @returns El último elemento de la lista.
+     */
     lastElement() {
         return this.#list[this.#list.length - 1];
+    }
+
+    /**
+     * Método que elimina el elemento de la posición indicada.
+     * @param {*} index La posición del elemento a eliminar.
+     * @returns El elemento borrado.
+     */
+    remove(index) {
+        return this.#list.splice(index, 1);
     }
 }
 
