@@ -46,6 +46,14 @@ class List {
     size() {
         return this.#list.length;
     }
+
+    /**
+     * Método que añade un elemento a la lista.
+     * @param {*} element El elemento a añadir.
+     */
+    add(element) {
+        this.#list.push(element);
+    }
 }
 
 /**
