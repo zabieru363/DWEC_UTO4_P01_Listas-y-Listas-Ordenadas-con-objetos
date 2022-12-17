@@ -34,3 +34,23 @@ class ObjectList extends List {
         this.#list = list;
     }
 }
+
+/**
+ * Subclase de List que contiene una lista de objetos
+ * a la cuál se le puede pasar una función de ordenamiento.
+ * @author Javier López
+ * @version 1.0
+ */
+class OrderedObjectList extends List {
+    // Propiedades privadas.
+    #list;
+    #type;
+    #order;
+
+    constructor(type, order, list = []) {
+        super(type, list);
+        this.#order = order;
+        this.#type = type;
+        this.#list = list;
+    }
+}
