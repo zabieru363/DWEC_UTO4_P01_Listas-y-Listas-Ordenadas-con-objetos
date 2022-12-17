@@ -137,6 +137,24 @@ class List {
     remove(index) {
         return this.#list.splice(index, 1);
     }
+
+    /**
+     * Método que elimina el elemento que se le pasa cómo parametro
+     * de la lista.
+     * @param {*} element El elemento que se quiere eliminar.
+     * @returns True si se ha podido eliminar, false si no es así.
+     */
+    removeElement(element) {
+        let removed = false;
+        const pos = this.indexOf(element);
+
+        if(pos !== -1) {
+            this.#list.splice(pos, 1);
+            removed = true;
+        }
+
+        return removed;
+    }
 }
 
 /**
