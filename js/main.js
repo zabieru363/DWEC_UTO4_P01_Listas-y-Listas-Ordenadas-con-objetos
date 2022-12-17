@@ -54,3 +54,9 @@ class OrderedObjectList extends List {
         this.#list = list;
     }
 }
+
+// ! Función de testeo.
+(function() {
+    const list = new List();
+    console.log(list);
+})();
