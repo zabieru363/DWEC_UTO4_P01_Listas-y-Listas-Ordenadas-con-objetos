@@ -112,6 +112,14 @@ class List {
     clear() {
         this.#list.length = 0;
     }
+
+    /**
+     * Método que devuelve el primer elemento de la lista.
+     * @returns El primer elemento de la lista.
+     */
+    firstElement() {
+        return this.#list[0];
+    }
 }
 
 /**
