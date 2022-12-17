@@ -87,6 +87,16 @@ class List {
     indexOf(element) {
         return this.#list.indexOf(element);
     }
+
+    /**
+     * Método que devuelve la posición del elemento que se
+     * le pasa cómo parametro pero comenzando por el final.
+     * @param {*} element El elemento del cuál se quiere obtener su posición.
+     * @returns La posición del elemento, -1 si no lo encuentra.
+     */
+    lastIndexOf(element) {
+        return this.#list.lastIndexOf(element);
+    }
 }
 
 /**
