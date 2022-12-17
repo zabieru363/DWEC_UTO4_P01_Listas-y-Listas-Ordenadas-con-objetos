@@ -65,6 +65,18 @@ class List {
         this.#list.splice(index, 0, element);
         return this.size();
     }
+
+    /**
+     * Método que devuelve el elemento de la lista de
+     * la posición indicada.
+     * @param {*} index La posición del elemento a obtener.
+     * @returns El elemento en base a la posición.
+     */
+    get(index) {
+        return this.#list.find(function(elem, pos) {
+            if(index === pos) return elem;
+        });
+    }
 }
 
 /**
