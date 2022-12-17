@@ -8,7 +8,7 @@
  */
 class List {
     // Propiedades privadas:
-    #list;
+    #list = [];
     #capacity = 5;  // Tamaño máximo de la lista.
 
     /**
@@ -53,6 +53,17 @@ class List {
      */
     add(element) {
         this.#list.push(element);
+    }
+
+    /**
+     * Método que añade un elemento a la lista en la posición especificada.
+     * @param {*} element El elemento a añadir.
+     * @param {*} index La posición donde se va a añadir el elemento.
+     * @returns El número de elementos de la lista.
+     */
+    addAt(element, index) {
+        this.#list.splice(index, 0, element);
+        return this.size();
     }
 }
 
