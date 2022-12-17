@@ -38,6 +38,14 @@ class List {
     isFull() {
         return this.#list.length === this.#capacity;
     }
+
+    /**
+     * Método que devuelve el número de elementos que tiene la lista.
+     * @returns El número de elementos que tiene la lista.
+     */
+    size() {
+        return this.#list.length;
+    }
 }
 
 /**
