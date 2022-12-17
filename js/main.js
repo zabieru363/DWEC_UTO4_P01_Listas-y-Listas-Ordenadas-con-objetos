@@ -20,6 +20,16 @@ class List {
     constructor(list = []) {
         this.#list = list;
     }
+
+    // * MÉTODOS PÚBLICOS DEL OBJETO
+
+    /**
+     * Método que comprueba si la lista está vacía.
+     * @returns True si está vacía, false si no es así.
+     */
+    isEmpty() {
+        return this.#list.length === 0;
+    }
 }
 
 /**
