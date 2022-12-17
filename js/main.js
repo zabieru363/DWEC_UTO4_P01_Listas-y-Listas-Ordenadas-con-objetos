@@ -105,6 +105,13 @@ class List {
     capacity() {
         return this.#capacity;
     }
+
+    /**
+     * Método que vacía la lista.
+     */
+    clear() {
+        this.#list.length = 0;
+    }
 }
 
 /**
