@@ -275,6 +275,11 @@ class OrderedObjectList extends List {
 
 // ! Función de testeo.
 (function() {
+    // Creando una lista:
     const list = new List();
-    console.log(list);
+
+    // * PROBANDO MÉTODOS DEL OBJETO LIST
+
+    // ? isEmpty:
+    console.log(list.isEmpty());
 })();
