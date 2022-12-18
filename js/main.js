@@ -480,6 +480,12 @@ class OrderedObjectList extends List {
 
     // ! PROBANDO ERRORES DE REMOVE
 
+    try {
+        console.log(list.remove(22));
+    } catch(error) {
+        console.error(error);   // El indice está fuera de los limites de la lista.
+    }
+
     list.clear();
 
      // La lista está vacía.
