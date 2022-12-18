@@ -136,7 +136,7 @@ class List {
         if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
-        
+
         return this.#list[0];
     }
 
@@ -145,6 +145,10 @@ class List {
      * @returns El último elemento de la lista.
      */
     lastElement() {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+        
         return this.#list[this.#list.length - 1];
     }
 
