@@ -365,5 +365,16 @@ class OrderedObjectList extends List {
     console.log(typeof list.get(3) === "undefined" ? "No encontrado" : ""); // No encontrado.
 
     // ? ToString
-    console.log(list.toString());
+    console.log(list.toString());   // Javier - María - Fernando
+
+    // ! PROBANDO ERRORES DE TOSTRING
+
+    // La lista está vacía.
+    list.clear();
+
+    try {
+        console.log(list.toString());
+    } catch(error) {
+        console.error(error);
+    }
 })();
