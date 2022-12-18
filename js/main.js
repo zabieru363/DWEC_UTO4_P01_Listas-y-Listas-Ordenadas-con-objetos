@@ -175,7 +175,7 @@ class List {
         if(this.isEmpty) {
             throw new Error("La lista está vacía.");
         }
-        
+
         let removed = false;
         const pos = this.indexOf(element);
 
@@ -195,6 +195,10 @@ class List {
      * @returns El elemento anterior.
      */
     set(element, index) {
+        if(this.isEmpty) {
+            throw new Error("La lista está vacía.");
+        }
+        
         return this.#list.splice(index, 1, element);
     }
 }
