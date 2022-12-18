@@ -6,9 +6,9 @@
  */
 const dictionaryColors = {
     printMessage : "#00C2C8",
-    functionTitle : "#00C800",
-    exception : "#CD0000",
-    errorName : "#0500FF",
+    methodTitle : "#00C800",
+    className : "#FFB200",
+    errorName : "#BA0000",
 
     setColor : function(color) {
         return "color: " + dictionaryColors[color];
