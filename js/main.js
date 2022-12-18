@@ -52,6 +52,9 @@ class List {
      * @param {*} element El elemento a añadir.
      */
     add(element) {
+        if(this.isFull()) {
+            throw new Error("La lista está llena.");
+        }
         this.#list.push(element);
     }
 
