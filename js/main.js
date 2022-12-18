@@ -133,7 +133,7 @@ class List {
         if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
-        
+
         return this.#list.lastIndexOf(element);
     }
 
@@ -396,13 +396,34 @@ class OrderedObjectList extends List {
     // ! PROBANDO ERRORES DE INDEXOF
 
     // El elemento no fue encontrado.
-    console.log(list.indexOf("Marta"));
+    console.log(list.indexOf("Marta") === -1 ? "No encontrado" : "");
 
     // La lista está vacía.
     list.clear();
 
     try {
         console.log(list.indexOf("Javier"));
+    } catch(error) {
+        console.error(error);
+    }
+
+    // ? LastIndexOf
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(list.lastIndexOf("Fernando"));
+
+    // ! PROBANDO ERRORES DE LASTINDEXOF
+
+    // Elemento no encontrado.
+    console.log(list.lastIndexOf("Marta") === -1 ? "No encontrado" : "");
+
+    // La lista está vacía.
+    list.clear();
+    
+    try {
+        console.log(list.lastIndexOf("Javier"));
     } catch(error) {
         console.error(error);
     }
