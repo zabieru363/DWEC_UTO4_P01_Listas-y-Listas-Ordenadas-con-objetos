@@ -20,248 +20,283 @@ const dictionaryColors = {
     // Creando una lista:
     const list = new List();
 
+    console.log("%cPROBANDO OBJETO LIST", dictionaryColors.setColor("className"));
+
     // * PROBANDO MÉTODOS DEL OBJETO LIST
 
     // ? IsEmpty:
-    console.log(list.isEmpty());    // True
-
+    console.log("%cMétodo isEmpty", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.isEmpty(), dictionaryColors.setColor("printMessage"));    // True
+    
     // ? IsFull:
-    console.log(list.isFull()); // False.
+    console.log("%cMétodo isFull", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.isFull(), dictionaryColors.setColor("printMessage")); // False.
     
     // ? Size
-    console.log(list.size());   // 0
-
+    console.log("%cMétodo size", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.size(), dictionaryColors.setColor("printMessage"));   // 0
+    
     // ? Add
+    console.log("%cMétodo add", dictionaryColors.setColor("methodTitle"));
     // Los añade todos.
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
     list.add("Felipe");
     list.add("Marta");
-
-    console.log(list.size());
+    
+    console.log("%cTamaño de la lista ahora " + list.size(), dictionaryColors.setColor("printMessage"));
     
     // ! ERRORES DE ADD:
-
+    
     // La lista está llena.
+    console.log("%cLa lista está llena", dictionaryColors.setColor("errorName"));
     try {
         list.add("otro");   // Este no lo añade.
     } catch(error) {
         console.error(error);   // Por lo que genera una excepción.
     }
-
-    console.log(list.size());
+    
+    console.log("%cTamaño de la lista ahora " + list.size(), dictionaryColors.setColor("printMessage"));
     
     // ? Clear
     list.clear();   // Vacio la lista.
-
-    console.log(list.size());
+    
+    console.log("%cTamaño de la lista ahora " + list.size(), dictionaryColors.setColor("printMessage"));
     
     // ? AddAt
+    console.log("%cMétodo addAt", dictionaryColors.setColor("methodTitle"));
     
     // Los añade todos.
-    console.log(list.addAt("Javier", 0));
-    console.log(list.addAt("María", 1));
-    console.log(list.addAt("Fernando", 2));
-    console.log(list.addAt("Felipe", 3));
-    console.log(list.addAt("María", 4));
-
-    console.log(list.size());
+    console.log("%c" + list.addAt("Javier", 0), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list.addAt("María", 1), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list.addAt("Fernando", 2), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list.addAt("Felipe", 3), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list.addAt("María", 4), dictionaryColors.setColor("printMessage"));
+    
+    console.log("%cTamaño de la lista ahora " + list.size(), dictionaryColors.setColor("printMessage"));
     
     // ! PROBANDO ERRORES DE ADDAT:
     
     // La lista está llena.
+    console.log("%cLa lista está llena", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.addAt("otro", 2));
     } catch(error) {
         console.error(error);   // La lista está llena.
     }
-
+    
     list.clear();
-
+    
     // El indice está fuera de los límites de la lista.
+    console.log("%cEl indice está fuera de los límites de la lista.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.addAt("otro", 22));
     } catch(error) {
         console.error(error);   // El indice está fuera de los límites de la lista.
     }
-
+    
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
+    
     // ? Get
-    console.log(list.get(0));   // Javier
-    console.log(list.get(1));   // María
-
+    console.log("%cMétodo get", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.get(0), dictionaryColors.setColor("printMessage"));   // Javier
+    console.log("%c" + list.get(1), dictionaryColors.setColor("printMessage"));   // María
+    
     // ! PROBANDO ERRORES DE GET.
-
+    
     // El indice está fuera de los limites de la lista.
+    console.log("%cEl indice está fuera de los límites de la lista.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.get(22));
     } catch(error) {
         console.error(error);   // El indice está fuera de los limites de la lista.
     }
-
+    
     // El elemento no existe en la lista.
+    console.log("%cEl elemento no existe en la lista.", dictionaryColors.setColor("errorName"));
     console.log(typeof list.get(3) === "undefined" ? "No encontrado" : ""); // No encontrado.
-
+    
     // ? ToString
-    console.log(list.toString());   // Javier - María - Fernando
-
+    console.log("%cMétodo toString", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.toString(), dictionaryColors.setColor("printMessage"));   // Javier - María - Fernando
+    
     // ! PROBANDO ERRORES DE TOSTRING
-
+    
     // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     list.clear();
-
+    
     try {
         console.log(list.toString());
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
     
     // ? IndexOf
-    console.log(list.indexOf("Javier"));    // 0
-
+    console.log("%cMétodo indexOf", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.indexOf("Javier"), dictionaryColors.setColor("printMessage"));    // 0
+    
     // ! PROBANDO ERRORES DE INDEXOF
-
+    
     // El elemento no fue encontrado.
+    console.log("%cEl elemento no fue encontrado.", dictionaryColors.setColor("errorName"));
     console.log(list.indexOf("Marta") === -1 ? "No encontrado" : "");   // No encontrado
-
+    
     // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     list.clear();
-
+    
     try {
         console.log(list.indexOf("Javier"));
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     // ? LastIndexOf
+    console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
-    console.log(list.lastIndexOf("Fernando"));  // 2
-
+    
+    console.log("%c" + list.lastIndexOf("Fernando"), dictionaryColors.setColor("printMessage"));  // 2
+    
     // ! PROBANDO ERRORES DE LASTINDEXOF
-
+    
     // Elemento no encontrado.
+    console.log("%cEl elemento no fue encontrado.", dictionaryColors.setColor("errorName"));
     console.log(list.lastIndexOf("Marta") === -1 ? "No encontrado" : "");   // No encontrado.
-
+    
     // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     list.clear();
-
+    
     try {
         console.log(list.lastIndexOf("Javier"));
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     // ? Capacity
-    console.log(list.capacity());   // 5
-
+    console.log("%cMétodo capacity", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list.capacity(), dictionaryColors.setColor("printMessage"));   // 5
+    
     // ? FirstElement
+    console.log("%cMétodo firstElement", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
-    console.log(list.firstElement());   // Javier
-
+    
+    console.log("%c" + list.firstElement(), dictionaryColors.setColor("printMessage"));   // Javier
+    
     // ! PROBANDO ERRORES DE FIRSTELEMENT
-
+    
     list.clear();
-
-     // La lista está vacía.
+    
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.firstElement());
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     // ? LastElement
+    console.log("%cMétodo lastElement", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
-    console.log(list.lastElement());    // Fernando
-
+    
+    console.log("%c" + list.lastElement(), dictionaryColors.setColor("printMessage"));    // Fernando
+    
     // ! PROBANDO ERRORES DE LASTELEMENT
-
+    
     list.clear();
-
-     // La lista está vacía.
+    
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.lastElement());
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     // ? Remove
+    console.log("%cMétodo remove", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
+    
     console.log(...list.remove(1)); // María
-
+    
     // ! PROBANDO ERRORES DE REMOVE
-
+    
+    // El indice está fuera de los limites de la lista.
+    console.log("%cEl indice está fuera de los limites de la lista.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.remove(22));
     } catch(error) {
         console.error(error);   // El indice está fuera de los limites de la lista.
     }
-
+    
     list.clear();
-
-     // La lista está vacía.
+    
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.remove(1));
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     // ? RemoveElement
+    console.log("%cMétodo removeElement", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
-    console.log(list.removeElement("María"));
+    
+    console.log("%c" + list.removeElement("María"), dictionaryColors.setColor("printMessage"));
     
     // ! PROBANDO ERRORES DE REMOVEELEMENT
-
+    
     list.clear();
     
-     // La lista está vacía.
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.removeElement("María"));
     } catch(error) {
         console.error(error);    // La lista está vacía.
     }
-
+    
     // ? Set
+    console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
     list.add("Javier");
     list.add("María");
     list.add("Fernando");
-
+    
     console.log(...list.set("Zabieru", 0))
-
+    
     // ! PROBANDO ERRORES DE SET
-
+    
     // El indice está fuera de los limites de la lista.
+    console.log("%cEl indice está fuera de los limites de la lista.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.set("Javier", 22));
     } catch(error) {
         console.error(error);    // El indice está fuera de los limites de la lista.
     }
-
+    
     list.clear();
     
-     // La lista está vacía.
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
         console.log(list.set("Javier", 0));
     } catch(error) {
