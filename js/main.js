@@ -516,4 +516,29 @@ class OrderedObjectList extends List {
     } catch(error) {
         console.error(error);    // La lista está vacía.
     }
+
+    // ? Set
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(...list.set("Zabieru", 0))
+
+    // ! PROBANDO ERRORES DE SET
+
+    // El indice está fuera de los limites de la lista.
+    try {
+        console.log(list.set("Javier", 22));
+    } catch(error) {
+        console.error(error);    // El indice está fuera de los limites de la lista.
+    }
+
+    list.clear();
+    
+     // La lista está vacía.
+    try {
+        console.log(list.set("Javier", 0));
+    } catch(error) {
+        console.error(error);    // La lista está vacía.
+    }
 })();
