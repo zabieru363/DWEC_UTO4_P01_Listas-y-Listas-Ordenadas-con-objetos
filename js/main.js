@@ -161,7 +161,7 @@ class List {
         if(this.isEmpty) {
             throw new Error("La lista está vacía.");
         }
-        
+
         return this.#list.splice(index, 1);
     }
 
@@ -172,6 +172,10 @@ class List {
      * @returns True si se ha podido eliminar, false si no es así.
      */
     removeElement(element) {
+        if(this.isEmpty) {
+            throw new Error("La lista está vacía.");
+        }
+        
         let removed = false;
         const pos = this.indexOf(element);
 
