@@ -87,7 +87,7 @@ class List {
         if(index < 0 || index > this.#capacity) {
             throw new Error("El indice está fuera de los limites de la lista.");
         }
-        
+
         return this.#list.find(function(elem, pos) {
             if(index === pos) return elem;
         });
@@ -133,6 +133,10 @@ class List {
      * @returns El primer elemento de la lista.
      */
     firstElement() {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+        
         return this.#list[0];
     }
 
