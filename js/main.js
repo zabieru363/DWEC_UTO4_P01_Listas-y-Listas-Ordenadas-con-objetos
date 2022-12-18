@@ -383,7 +383,7 @@ class OrderedObjectList extends List {
     try {
         console.log(list.toString());
     } catch(error) {
-        console.error(error);
+        console.error(error);   // La lista está vacía.
     }
 
     list.add("Javier");
@@ -391,12 +391,12 @@ class OrderedObjectList extends List {
     list.add("Fernando");
     
     // ? IndexOf
-    console.log(list.indexOf("Javier"));
+    console.log(list.indexOf("Javier"));    // 0
 
     // ! PROBANDO ERRORES DE INDEXOF
 
     // El elemento no fue encontrado.
-    console.log(list.indexOf("Marta") === -1 ? "No encontrado" : "");
+    console.log(list.indexOf("Marta") === -1 ? "No encontrado" : "");   // No encontrado
 
     // La lista está vacía.
     list.clear();
@@ -404,7 +404,7 @@ class OrderedObjectList extends List {
     try {
         console.log(list.indexOf("Javier"));
     } catch(error) {
-        console.error(error);
+        console.error(error);   // La lista está vacía.
     }
 
     // ? LastIndexOf
@@ -412,12 +412,12 @@ class OrderedObjectList extends List {
     list.add("María");
     list.add("Fernando");
 
-    console.log(list.lastIndexOf("Fernando"));
+    console.log(list.lastIndexOf("Fernando"));  // 2
 
     // ! PROBANDO ERRORES DE LASTINDEXOF
 
     // Elemento no encontrado.
-    console.log(list.lastIndexOf("Marta") === -1 ? "No encontrado" : "");
+    console.log(list.lastIndexOf("Marta") === -1 ? "No encontrado" : "");   // No encontrado.
 
     // La lista está vacía.
     list.clear();
@@ -425,9 +425,16 @@ class OrderedObjectList extends List {
     try {
         console.log(list.lastIndexOf("Javier"));
     } catch(error) {
-        console.error(error);
+        console.error(error);   // La lista está vacía.
     }
 
     // ? Capacity
-    console.log(list.capacity());
+    console.log(list.capacity());   // 5
+
+    // ? FirstElement
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(list.firstElement());   // Javier
 })();
