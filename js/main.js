@@ -421,10 +421,13 @@ class OrderedObjectList extends List {
 
     // La lista está vacía.
     list.clear();
-    
+
     try {
         console.log(list.lastIndexOf("Javier"));
     } catch(error) {
         console.error(error);
     }
+
+    // ? Capacity
+    console.log(list.capacity());
 })();
