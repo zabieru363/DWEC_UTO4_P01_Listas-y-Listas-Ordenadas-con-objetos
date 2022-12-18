@@ -200,7 +200,7 @@ class List {
      * @returns True si se ha podido eliminar, false si no es así.
      */
     removeElement(element) {
-        if(this.isEmpty) {
+        if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
 
@@ -223,8 +223,12 @@ class List {
      * @returns El elemento anterior.
      */
     set(element, index) {
-        if(this.isEmpty) {
+        if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
+        }
+
+        if(index < 0 || index > this.#capacity) {
+            throw new Error("El indice está fuera de los limites de la lista.");
         }
 
         return this.#list.splice(index, 1, element);
@@ -493,5 +497,23 @@ class OrderedObjectList extends List {
         console.log(list.remove(1));
     } catch(error) {
         console.error(error);   // La lista está vacía.
+    }
+
+    // ? RemoveElement
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(list.removeElement("María"));
+    
+    // ! PROBANDO ERRORES DE REMOVEELEMENT
+
+    list.clear();
+    
+     // La lista está vacía.
+    try {
+        console.log(list.removeElement("María"));
+    } catch(error) {
+        console.error(error);    // La lista está vacía.
     }
 })();
