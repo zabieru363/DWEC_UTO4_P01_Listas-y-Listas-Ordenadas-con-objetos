@@ -290,15 +290,12 @@ class OrderedObjectList extends List {
     console.log(list.size());   // 0
 
     // ? Add
-    try {   // Los añade todos.
-        list.add("Javier");
-        list.add("María");
-        list.add("Fernando");
-        list.add("Felipe");
-        list.add("Marta");
-    } catch(error) {
-        console.error(error);
-    }
+    // Los añade todos.
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+    list.add("Felipe");
+    list.add("Marta");
 
     console.log(list.size());
     
@@ -310,6 +307,11 @@ class OrderedObjectList extends List {
     } catch(error) {
         console.error(error);   // Por lo que genera una excepción.
     }
+
+    console.log(list.size());
+    
+    // ? Clear
+    list.clear();   // Vacio la lista.
 
     console.log(list.size());
 })();
