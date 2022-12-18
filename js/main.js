@@ -186,6 +186,10 @@ class List {
             throw new Error("La lista está vacía.");
         }
 
+        if(index < 0 || index > this.#capacity) {
+            throw new Error("El indice está fuera de los limites de la lista.");
+        }
+
         return this.#list.splice(index, 1);
     }
 
@@ -454,7 +458,7 @@ class OrderedObjectList extends List {
     list.add("María");
     list.add("Fernando");
 
-    console.log(list.lastElement());
+    console.log(list.lastElement());    // Fernando
 
     // ! PROBANDO ERRORES DE LASTELEMENT
 
@@ -472,5 +476,16 @@ class OrderedObjectList extends List {
     list.add("María");
     list.add("Fernando");
 
-    console.log(...list.remove(1));
+    console.log(...list.remove(1)); // María
+
+    // ! PROBANDO ERRORES DE REMOVE
+
+    list.clear();
+
+     // La lista está vacía.
+    try {
+        console.log(list.remove(1));
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
 })();
