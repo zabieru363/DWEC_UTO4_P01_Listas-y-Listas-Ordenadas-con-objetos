@@ -1,5 +1,20 @@
 "use strict";
 
+/**
+ * Variable JSON que hace de diccionario de colores para
+ * mostrar con colores los mensajes por pantalla. 
+ */
+const dictionaryColors = {
+    printMessage : "#00C2C8",
+    functionTitle : "#00C800",
+    exception : "#CD0000",
+    errorName : "#0500FF",
+
+    setColor : function(color) {
+        return "color: " + dictionaryColors[color];
+    }
+};
+
 // ! Función de testeo.
 (function() {
     // Creando una lista:
