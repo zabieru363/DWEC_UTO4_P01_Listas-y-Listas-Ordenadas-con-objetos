@@ -280,12 +280,36 @@ class OrderedObjectList extends List {
 
     // * PROBANDO MÉTODOS DEL OBJETO LIST
 
-    // ? isEmpty:
+    // ? IsEmpty:
     console.log(list.isEmpty());    // True
 
-    // ? isFull:
+    // ? IsFull:
     console.log(list.isFull()); // False.
     
     // ? Size
     console.log(list.size());   // 0
+
+    // ? Add
+    try {   // Los añade todos.
+        list.add("Javier");
+        list.add("María");
+        list.add("Fernando");
+        list.add("Felipe");
+        list.add("Marta");
+    } catch(error) {
+        console.error(error);
+    }
+
+    console.log(list.size());
+    
+    // ! ERRORES DE ADD.
+
+    // La lista está llena.
+    try {
+        list.add("otro");   // Este no lo añade.
+    } catch(error) {
+        console.error(error);   // Por lo que genera una excepción.
+    }
+
+    console.log(list.size());
 })();
