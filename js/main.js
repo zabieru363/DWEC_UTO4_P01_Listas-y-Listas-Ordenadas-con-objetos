@@ -116,6 +116,10 @@ class List {
      * @returns La posición del elemento, -1 si no lo encuentra.
      */
     indexOf(element) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+
         return this.#list.indexOf(element);
     }
 
@@ -126,6 +130,10 @@ class List {
      * @returns La posición del elemento, -1 si no lo encuentra.
      */
     lastIndexOf(element) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+        
         return this.#list.lastIndexOf(element);
     }
 
@@ -374,6 +382,27 @@ class OrderedObjectList extends List {
 
     try {
         console.log(list.toString());
+    } catch(error) {
+        console.error(error);
+    }
+
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+    
+    // ? IndexOf
+    console.log(list.indexOf("Javier"));
+
+    // ! PROBANDO ERRORES DE INDEXOF
+
+    // El elemento no fue encontrado.
+    console.log(list.indexOf("Marta"));
+
+    // La lista está vacía.
+    list.clear();
+
+    try {
+        console.log(list.indexOf("Javier"));
     } catch(error) {
         console.error(error);
     }
