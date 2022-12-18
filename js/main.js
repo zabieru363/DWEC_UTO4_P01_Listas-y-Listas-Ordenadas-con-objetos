@@ -84,6 +84,10 @@ class List {
      * @returns El elemento en base a la posición.
      */
     get(index) {
+        if(index < 0 || index > this.#capacity) {
+            throw new Error("El indice está fuera de los limites de la lista.");
+        }
+        
         return this.#list.find(function(elem, pos) {
             if(index === pos) return elem;
         });
