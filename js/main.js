@@ -281,5 +281,11 @@ class OrderedObjectList extends List {
     // * PROBANDO MÉTODOS DEL OBJETO LIST
 
     // ? isEmpty:
-    console.log(list.isEmpty());
+    console.log(list.isEmpty());    // True
+
+    // ? isFull:
+    console.log(list.isFull()); // False.
+    
+    // ? Size
+    console.log(list.size());   // 0
 })();
