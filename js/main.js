@@ -98,14 +98,14 @@ class List {
      * @returns La lista en formato cadena.
      */
     toString() {
-        if(this.isEmpty) {
+        if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
 
         return this.#list.reduce(function(str, elem, index) {
             return index !== 0 ? 
-                str + elem + " - " :
-                str + elem + " ";
+                str + " - " +  elem  :
+                str + " " + elem;
         }, "");
     }
 
@@ -332,7 +332,7 @@ class OrderedObjectList extends List {
     try {
         console.log(list.addAt("otro", 2));
     } catch(error) {
-        console.error(error);
+        console.error(error);   // La lista está llena.
     }
 
     list.clear();
@@ -341,7 +341,7 @@ class OrderedObjectList extends List {
     try {
         console.log(list.addAt("otro", 22));
     } catch(error) {
-        console.error(error);
+        console.error(error);   // El indice está fuera de los límites de la lista.
     }
 
     list.add("Javier");
@@ -349,8 +349,8 @@ class OrderedObjectList extends List {
     list.add("Fernando");
 
     // ? Get
-    console.log(list.get(0));
-    console.log(list.get(1));
+    console.log(list.get(0));   // Javier
+    console.log(list.get(1));   // María
 
     // ! PROBANDO ERRORES DE GET.
 
@@ -358,9 +358,12 @@ class OrderedObjectList extends List {
     try {
         console.log(list.get(22));
     } catch(error) {
-        console.error(error);
+        console.error(error);   // El indice está fuera de los limites de la lista.
     }
 
     // El elemento no existe en la lista.
-    console.log(typeof list.get(3) === "undefined" ? "No encontrado" : "");
+    console.log(typeof list.get(3) === "undefined" ? "No encontrado" : ""); // No encontrado.
+
+    // ? ToString
+    console.log(list.toString());
 })();
