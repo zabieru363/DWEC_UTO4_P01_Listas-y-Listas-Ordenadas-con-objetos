@@ -343,4 +343,24 @@ class OrderedObjectList extends List {
     } catch(error) {
         console.error(error);
     }
+
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    // ? Get
+    console.log(list.get(0));
+    console.log(list.get(1));
+
+    // ! PROBANDO ERRORES DE GET.
+
+    // El indice está fuera de los limites de la lista.
+    try {
+        console.log(list.get(22));
+    } catch(error) {
+        console.error(error);
+    }
+
+    // El elemento no existe en la lista.
+    console.log(typeof list.get(3) === "undefined" ? "No encontrado" : "");
 })();
