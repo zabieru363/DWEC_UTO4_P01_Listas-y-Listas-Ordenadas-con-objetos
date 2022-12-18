@@ -437,4 +437,33 @@ class OrderedObjectList extends List {
     list.add("Fernando");
 
     console.log(list.firstElement());   // Javier
+
+    // ! PROBANDO ERRORES DE FIRSTELEMENT
+
+    list.clear();
+
+     // La lista está vacía.
+    try {
+        console.log(list.firstElement());
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
+    // ? LastElement
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(list.lastElement());
+
+    // ! PROBANDO ERRORES DE LASTELEMENT
+
+    list.clear();
+
+     // La lista está vacía.
+    try {
+        console.log(list.lastElement());
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
 })();
