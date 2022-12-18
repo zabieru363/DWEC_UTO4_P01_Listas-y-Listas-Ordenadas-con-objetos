@@ -182,7 +182,7 @@ class List {
      * @returns El elemento borrado.
      */
     remove(index) {
-        if(this.isEmpty) {
+        if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
 
@@ -466,4 +466,11 @@ class OrderedObjectList extends List {
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
+
+    // ? Remove
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
+
+    console.log(...list.remove(1));
 })();
