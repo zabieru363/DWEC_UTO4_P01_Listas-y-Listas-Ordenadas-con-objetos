@@ -65,6 +65,14 @@ class List {
      * @returns El número de elementos de la lista.
      */
     addAt(element, index) {
+        if(this.isFull()) {
+            throw new Error("La lista está llena.");
+        }
+
+        if(index < 0 || index > this.#capacity) {
+            throw new Error("El indice está fuera de los limites de la lista.");
+        }
+
         this.#list.splice(index, 0, element);
         return this.size();
     }
