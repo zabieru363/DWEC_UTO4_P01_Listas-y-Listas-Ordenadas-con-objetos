@@ -148,7 +148,7 @@ class List {
         if(this.isEmpty()) {
             throw new Error("La lista está vacía.");
         }
-        
+
         return this.#list[this.#list.length - 1];
     }
 
@@ -158,6 +158,10 @@ class List {
      * @returns El elemento borrado.
      */
     remove(index) {
+        if(this.isEmpty) {
+            throw new Error("La lista está vacía.");
+        }
+        
         return this.#list.splice(index, 1);
     }
 
