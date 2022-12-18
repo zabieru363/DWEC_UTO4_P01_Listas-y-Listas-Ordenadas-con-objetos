@@ -94,6 +94,22 @@ class List {
     }
 
     /**
+     * Método que imprime la lista en formato cadena.
+     * @returns La lista en formato cadena.
+     */
+    toString() {
+        if(this.isEmpty) {
+            throw new Error("La lista está vacía.");
+        }
+
+        return this.#list.reduce(function(str, elem, index) {
+            return index !== 0 ? 
+                str + elem + " - " :
+                str + elem + " ";
+        }, "");
+    }
+
+    /**
      * Método que devuelve la posición del elemento que se
      * le pasa cómo parametro.
      * @param {*} element El elemento del cuál se quiere obtener su posición.
@@ -198,7 +214,7 @@ class List {
         if(this.isEmpty) {
             throw new Error("La lista está vacía.");
         }
-        
+
         return this.#list.splice(index, 1, element);
     }
 }
