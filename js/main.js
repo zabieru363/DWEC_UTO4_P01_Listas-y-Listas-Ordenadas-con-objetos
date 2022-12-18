@@ -299,7 +299,7 @@ class OrderedObjectList extends List {
 
     console.log(list.size());
     
-    // ! ERRORES DE ADD.
+    // ! ERRORES DE ADD:
 
     // La lista está llena.
     try {
@@ -314,4 +314,33 @@ class OrderedObjectList extends List {
     list.clear();   // Vacio la lista.
 
     console.log(list.size());
+    
+    // ? AddAt
+    
+    // Los añade todos.
+    console.log(list.addAt("Javier", 0));
+    console.log(list.addAt("María", 1));
+    console.log(list.addAt("Fernando", 2));
+    console.log(list.addAt("Felipe", 3));
+    console.log(list.addAt("María", 4));
+
+    console.log(list.size());
+    
+    // ! PROBANDO ERRORES DE ADDAT:
+    
+    // La lista está llena.
+    try {
+        console.log(list.addAt("otro", 2));
+    } catch(error) {
+        console.error(error);
+    }
+
+    list.clear();
+
+    // El indice está fuera de los límites de la lista.
+    try {
+        console.log(list.addAt("otro", 22));
+    } catch(error) {
+        console.error(error);
+    }
 })();
