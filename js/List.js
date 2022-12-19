@@ -55,6 +55,7 @@ class List {
         if(this.isFull()) {
             throw new Error("La lista está llena.");
         }
+        
         this.#list.push(element);
     }
 
@@ -103,9 +104,24 @@ class List {
         }
 
         return this.#list.reduce(function(str, elem, index) {
-            return index !== 0 ? 
-                str + " - " +  elem  :
-                str + " " + elem;
+            if(elem.ISBN || elem.title) {
+               return index !== 0 ? 
+                str + "ISBN: " +  elem.ISBN + " - " 
+                + "TITLE: " +   elem.title + " - "
+                + "AUTHOR: " + elem.author + " - "
+                + "DATE: " + elem.publicationDate + " - "
+                + "PRICE: " + elem.price + "\n"
+
+                : str + "ISBN: " +  elem.ISBN + " " 
+                + "TITLE: " +   elem.title + " "
+                + "AUTHOR: " + elem.author + " "
+                + "DATE: " + elem.publicationDate + " "
+                + "PRICE: " + elem.price; 
+            } else {
+                return index !== 0 ? 
+                    str + " - " +  elem  :
+                    str + " " + elem;
+            }
         }, "");
     }
 
@@ -120,7 +136,11 @@ class List {
             throw new Error("La lista está vacía.");
         }
 
-        return this.#list.indexOf(element);
+        if(typeof element === "object") {
+            return this.#list.findIndex(elem => elem.ISBN === element.ISBN);
+        } else {
+            return this.#list.indexOf(element);
+        }
     }
 
     /**
@@ -134,7 +154,11 @@ class List {
             throw new Error("La lista está vacía.");
         }
 
-        return this.#list.lastIndexOf(element);
+        if(typeof element === "object") {
+            return this.#list.findLastIndex(elem => elem.ISBN === element.ISBN);
+        } else {
+            return this.#list.lastIndexOf(element);
+        }
     }
 
     /**

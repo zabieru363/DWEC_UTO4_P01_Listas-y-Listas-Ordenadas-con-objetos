@@ -302,4 +302,17 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);    // La lista está vacía.
     }
+
+    const list2 = new List();
+
+    const book = {
+        ISBN: "914-46-6086-292-7",
+        title: "El libro negro del programador",
+        author: "Rafael Gómez Blanes",
+        publicationDate: new Date(2014, 3, 4),
+        price: 20.45,
+    }
+
+    list2.add(book);
+    console.log(list2.toString());
 })();
