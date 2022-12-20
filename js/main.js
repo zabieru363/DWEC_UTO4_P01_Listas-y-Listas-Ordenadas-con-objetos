@@ -550,4 +550,31 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // El indice está fuera de los limites de la lista.
     }
+
+    // * PROBANDO OBJETO ORDEREDOBJECTLIST
+
+    // Aquí creo la función de ordenamiento que utilizaré
+    const orderFunction = function(a, b) {
+        // Si es un objeto
+        if(a instanceof Object) {
+            // Ordenaremos por la primera propiedad:
+            const first = Object.keys(a)[0];    // Guardamos la primera propiedad del objeto.
+
+            if(typeof first === "string") {
+                return a.first.localeCompare(b.first);
+            } else {
+                return a - b;
+            }
+        }
+
+        if(typeof a === "string") {
+            return a.localeCompare(b);
+        }
+
+        if(typeof a === "number") {
+            return a - b;
+        }
+    };
+
+    const orderedList = new OrderedObjectList("string", orderFunction);
 })();
