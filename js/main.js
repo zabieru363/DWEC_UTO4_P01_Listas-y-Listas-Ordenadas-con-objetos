@@ -306,28 +306,28 @@ const dictionaryColors = {
     // * COMPROBANDO QUE SE PUEDEN AÑADIR TAMBIÉN OBJETOS A LA LISTA.
 
     console.log("%cPROBANDO OBJETO LIST AÑADIENDO OBJETOS", dictionaryColors.setColor("className"));
-
+    
     const list2 = new List();
-
+    
     const book = {
         ISBN: "914-46-6086-292-7",
         title: "El libro negro del programador",
         author: "Rafael Gómez Blanes",
         publicationDate: new Date(2014, 3, 4),
         price: 20.45,
-    }
-
+    };
+    
     const book2 = {
-        ISBN: "914-46-6086-292-7",
-        title: "El libro negro del programador",
-        author: "Rafael Gómez Blanes",
-        publicationDate: new Date(2014, 3, 4),
-        price: 20.45,
-    }
-
+        ISBN: "411-06-3922-591-3",
+        title: "Un nuevo thriller trepidante",
+        author: "Karen M. McManus",
+        publicationDate: new Date(2018, 5, 22),
+        price: 18,
+    };
+    
     list2.add(book);
     list2.add("Javier");
-
+    
     console.log("%cMétodo toString", dictionaryColors.setColor("methodTitle"));
     console.log("%c" + list2.toString(), dictionaryColors.setColor("printMessage"));
     
@@ -339,4 +339,33 @@ const dictionaryColors = {
     console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
     console.log("%c" + list2.lastIndexOf("Javier"), dictionaryColors.setColor("printMessage"));
     console.log("%c" + list2.lastIndexOf(book), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list2.lastIndexOf(book2), dictionaryColors.setColor("printMessage"));
+    
+    // * PROBANDO OBJETO OBJECTLIST
+    
+    console.log("%cPROBANDO OBJETO OBJECTLIST", dictionaryColors.setColor("className"));
+    
+    const oList = new ObjectList("number");
+
+    // ! Solo probaré los métodos que he necesitado sobreescribir.
+    
+    // ? Add
+    console.log("%cMétodo add", dictionaryColors.setColor("methodTitle"));
+
+    // Añadiendo elementos que si son admitidos:
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+
+    console.log("%cTamaño de la lista ahora " + oList.size() + " elementos.", dictionaryColors.setColor("printMessage"));
+
+    // ! ERRORES DE ADD
+
+    // Tipo de dato no admitido en esta lista.
+    try {
+        oList.add("2");
+    } catch(error) {
+        console.error(error);   // Tipo de dato no admitido en esta lista.
+    }
 })();

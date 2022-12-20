@@ -24,4 +24,22 @@ class ObjectList extends List {
         this.#tyoe = type;
         this.#list = list;
     }
+
+    // * MÉTODOS SOBREESCRITOS DE LA HIJA
+
+    /**
+     * Método que añade un elemento a la lista.
+     * @param {*} element El elemento a añadir.
+     */
+    add(element) {
+        if(this.isFull()) {
+            throw new Error("La lista está llena.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+        
+        this.#list.push(element);
+    }
 }
