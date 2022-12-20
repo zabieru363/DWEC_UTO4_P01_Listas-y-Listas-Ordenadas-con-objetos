@@ -104,8 +104,10 @@ class List {
         }
 
         return this.#list.reduce(function(str, elem, index) {
-            if(typeof elem === "object") {
-                return str + elem.toString();
+            if(!elem instanceof Object) {
+                return index !== 0 ? 
+                    str + " - " + elem.toString() :
+                    str + " " + elem.toString();
             } else {
                 return index !== 0 ? 
                     str + " - " +  elem :
