@@ -8,7 +8,7 @@
  * @version 1.0
  */
 class ObjectList extends List {
-    // Propiedades privadas.
+    // * PROPIEDADES PRIVADAS
     #list;
     #type;
 

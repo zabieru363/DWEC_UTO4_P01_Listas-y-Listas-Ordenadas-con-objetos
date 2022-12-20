@@ -7,7 +7,7 @@
  * @version 1.0
  */
 class OrderedObjectList extends ObjectList {
-    // Propiedades privadas.
+    // * PROPIEDADES PRIVADAS
     #list;
     #type;
     #order;
