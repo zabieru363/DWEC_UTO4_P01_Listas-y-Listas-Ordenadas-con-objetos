@@ -526,7 +526,7 @@ const dictionaryColors = {
     console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
     
     console.log("%c" + oList.set(34, 2), dictionaryColors.setColor("printMessage"));
-
+    
     // ! PROBANDO ERRORES DE SET.
     
     // Tipo de dato no admitido en esta lista.
@@ -536,9 +536,9 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }
-
+    
     oList.clear();
-
+    
     // La lista está vacía.
     console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
     try {
@@ -546,13 +546,13 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // La lista está vacía.
     }
-
+    
     oList.add(1);
     oList.add(2);
     oList.add(3);
     oList.add(4);
     oList.add(5);
-
+    
     // El indice está fuera de los limites de la lista.
     console.log("%cEl indice está fuera de los limites de la lista.", dictionaryColors.setColor("errorName"));
     try {
@@ -560,12 +560,12 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // El indice está fuera de los limites de la lista.
     }
-
+    
     console.log("%cMétodo toString", dictionaryColors.setColor("printMessage"));
     console.log(oList.toString());
-
+    
     // * PROBANDO OBJETO ORDEREDOBJECTLIST
-
+    
     // Aquí creo la función de ordenamiento que utilizaré
     const orderFunction = function(array) {
         array.sort(function(a, b) {
@@ -573,25 +573,95 @@ const dictionaryColors = {
             if(a instanceof Object) {
                 // Ordenaremos por la primera propiedad:
                 const first = Object.keys(a)[0];    // Guardamos la primera propiedad del objeto.
-
+                
                 if(typeof first === "string") {
                     return a[first].localeCompare(b[first]);
                 } else {
                     return a - b;
                 }
             }
-
+            
             if(typeof a === "string") {
                 return a.localeCompare(b);
             }
-
+            
             if(typeof a === "number") {
                 return a - b;
             }
         });
     };
-
+    
     console.log("%cPROBANDO OBJETO ORDEREDOBJECTLIST", dictionaryColors.setColor("className"));
     
     const orderedList = new OrderedObjectList("string", orderFunction);
+    
+    // ? Add
+    console.log("%cMétodo add", dictionaryColors.setColor("methodTitle"));
+    orderedList.add("Javier");
+    orderedList.add("Kevin");
+    orderedList.add("Marta");
+    orderedList.add("Eduardo");
+    orderedList.add("Felipe");
+    
+    console.log("%cTotal de elementos de la lista ahora " + orderedList.size(), dictionaryColors.setColor("printMessage"));
+
+    // ! ERRORES DE ADD
+    
+    // La lista está llena.
+    console.log("%cLa lista está llena.", dictionaryColors.setColor("errorName"));
+    try {
+        orderedList.add("Hugo");
+    } catch(error) {
+        console.error(error);   // La lista está llena.
+    }
+    
+    orderedList.clear();
+    
+    // Tipo de dato no admitido en lista.
+    console.log("%cTipo de dato no admitido en lista.", dictionaryColors.setColor("errorName"));
+    try {
+        orderedList.add(2);
+    } catch(error) {
+        console.error(error);   // Tipo de dato no admitido en lista.
+    }
+    
+    orderedList.add("Javier");
+    orderedList.add("Kevin");
+    orderedList.add("Marta");
+    orderedList.add("Eduardo");
+    orderedList.add("Felipe");
+    
+    console.log("%cMostrando lista ordenada", dictionaryColors.setColor("printMessage"));
+    console.log("%c" + orderedList.toString(), dictionaryColors.setColor("printMessage"));
+    
+    // ! INTENTANDO USAR MÉTODOS QUE NO ESTÁN IMPLEMENTADOS EN ORDEREDOBJECTLIST
+    
+    console.log("%cINTENTANDO USAR MÉTODOS QUE NO ESTÁN IMPLEMENTADOS EN ORDEREDOBJECTLIST", dictionaryColors.setColor("printMessage"));
+    
+    // ? Addat
+    console.log("%cMétodo addAt", dictionaryColors.setColor("methodTitle"));
+
+    try {
+        orderedList.addAt();
+    } catch(error) {
+        console.error(error);   // Este método no está implementado para esta clase.
+    }
+
+    // ? LastIndexOf
+    console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
+
+    try {
+        orderedList.lastIndexOf();
+    } catch(error) {
+        console.error(error);   // Este método no está implementado para esta clase.
+    }
+
+    // ? Set
+    console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
+
+    try {
+        orderedList.set();
+    } catch(error) {
+        console.error(error);   // Este método no está implementado para esta clase.
+    }
 })();
