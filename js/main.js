@@ -592,10 +592,6 @@ const dictionaryColors = {
     };
 
     console.log("%cPROBANDO OBJETO ORDEREDOBJECTLIST", dictionaryColors.setColor("className"));
-    const orderedList = new OrderedObjectList("object", orderFunction);
-
-    orderedList.add(book);
-    orderedList.add(book2);
-
-    console.log(orderedList.toString());
+    
+    const orderedList = new OrderedObjectList("string", orderFunction);
 })();

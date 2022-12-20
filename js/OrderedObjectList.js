@@ -30,7 +30,8 @@ class OrderedObjectList extends ObjectList {
     // * MÉTODOS SOBREESCRITOS DE LA HIJA
 
     /**
-     * Método que añade un elemento a la lista.
+     * Método que añade un elemento a la lista. Después
+     * de añadir el elemento ordena la lista.
      * @param {*} element El elemento a añadir.
      */
     add(element) {
@@ -45,5 +46,26 @@ class OrderedObjectList extends ObjectList {
         this.#list.push(element);
 
         this.#order(this.#list);
+    }
+
+    /**
+     * En esta clase addAt no se implementa.
+     */
+    addAt() {
+        throw new Error("Este método no está implementado para esta clase.");
+    }
+
+    /**
+     * En esta clase lastIndexOf no se implementa.
+     */
+    lastIndexOf() {
+        throw new Error("Este método no está implementado para esta clase.");
+    }
+
+    /**
+     * En esta clase set no se implementa.
+     */
+    set() {
+        throw new Error("Este método no está implementado para esta clase.");
     }
 }
