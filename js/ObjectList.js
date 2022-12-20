@@ -102,4 +102,30 @@ class ObjectList extends List {
 
         return this.#list.findLastIndex(elem => elem === element);
     }
+
+    /**
+     * Método que elimina el elemento que se le pasa cómo parametro
+     * de la lista.
+     * @param {*} element El elemento que se quiere eliminar.
+     * @returns True si se ha podido eliminar, false si no es así.
+     */
+    removeElement(element) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+
+        let removed = false;
+        const pos = this.indexOf(element);
+
+        if(pos !== -1) {
+            this.#list.splice(pos, 1);
+            removed = true;
+        }
+
+        return removed;
+    }
 }
