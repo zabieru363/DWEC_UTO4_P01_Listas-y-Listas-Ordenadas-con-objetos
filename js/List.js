@@ -105,7 +105,7 @@ class List {
 
         return this.#list.reduce(function(str, elem, index) {
             if(typeof elem === "object") {
-                return elem.toString();
+                return str + elem.toString();
             } else {
                 return index !== 0 ? 
                     str + " - " +  elem :
@@ -125,11 +125,7 @@ class List {
             throw new Error("La lista está vacía.");
         }
 
-        if(typeof element === "object") {
-            return this.#list.findIndex(elem => elem === element);
-        } else {
-            return this.#list.indexOf(element);
-        }
+        return this.#list.findIndex(elem => elem === element);
     }
 
     /**
@@ -143,11 +139,7 @@ class List {
             throw new Error("La lista está vacía.");
         }
 
-        if(typeof element === "object") {
-            return this.#list.findLastIndex(elem => elem === element);
-        } else {
-            return this.#list.lastIndexOf(element);
-        }
+        return this.#list.findLastIndex(elem => elem === element);
     }
 
     /**

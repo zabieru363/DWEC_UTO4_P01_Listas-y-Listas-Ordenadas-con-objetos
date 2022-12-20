@@ -303,6 +303,10 @@ const dictionaryColors = {
         console.error(error);    // La lista está vacía.
     }
 
+    // * COMPROBANDO QUE SE PUEDEN AÑADIR TAMBIÉN OBJETOS A LA LISTA.
+
+    console.log("%cPROBANDO OBJETO LIST AÑADIENDO OBJETOS", dictionaryColors.setColor("className"));
+
     const list2 = new List();
 
     const book = {
@@ -312,7 +316,27 @@ const dictionaryColors = {
         publicationDate: new Date(2014, 3, 4),
         price: 20.45,
     }
-    
+
+    const book2 = {
+        ISBN: "914-46-6086-292-7",
+        title: "El libro negro del programador",
+        author: "Rafael Gómez Blanes",
+        publicationDate: new Date(2014, 3, 4),
+        price: 20.45,
+    }
+
     list2.add(book);
-    console.log(list2.toString());
+    list2.add("Javier");
+
+    console.log("%cMétodo toString", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list2.toString(), dictionaryColors.setColor("printMessage"));
+    
+    console.log("%cMétodo indexOf", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list2.indexOf(book), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list2.indexOf("Javier"), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list2.indexOf(book2), dictionaryColors.setColor("printMessage"));
+    
+    console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
+    console.log("%c" + list2.lastIndexOf("Javier"), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + list2.lastIndexOf(book), dictionaryColors.setColor("printMessage"));
 })();
