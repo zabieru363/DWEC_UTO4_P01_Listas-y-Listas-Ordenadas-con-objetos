@@ -405,4 +405,19 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }
+
+    // ? LastIndexOf
+    console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
+
+    console.log("%c" + oList.lastIndexOf(1), dictionaryColors.setColor("printMessage"));
+    
+    // ! PROBANDO ERRORES DE LASTINDEXOF.
+
+    // Tipo de dato no admitido en esta lista.
+    console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
+    try {
+        oList.lastIndexOf("algo");
+    } catch(error) {
+        console.error(error);   // Tipo de dato no admitido en esta lista.
+    }
 })();
