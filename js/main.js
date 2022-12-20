@@ -363,6 +363,7 @@ const dictionaryColors = {
     // ! ERRORES DE ADD
     
     // Tipo de dato no admitido en esta lista.
+    console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
     try {
         oList.add("2");
     } catch(error) {
@@ -371,20 +372,36 @@ const dictionaryColors = {
 
     // ? AddAt
     console.log("%cMétodo addAt", dictionaryColors.setColor("methodTitle"));
-
+    
     oList.clear();
-
+    
     // Los añade todos:
     console.log("%c" + oList.addAt(1, 0), dictionaryColors.setColor("printMessage"));
     console.log("%c" + oList.addAt(2, 1), dictionaryColors.setColor("printMessage"));
     console.log("%c" + oList.addAt(3, 2), dictionaryColors.setColor("printMessage"));
     console.log("%c" + oList.addAt(4, 3), dictionaryColors.setColor("printMessage"));
-
+    
     // ! ERRORES DE ADDAT.
-
+    
     // Tipo de dato no admitido en esta lista.
+    console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
     try {
         oList.addAt("algo", 4);
+    } catch(error) {
+        console.error(error);   // Tipo de dato no admitido en esta lista.
+    }
+    
+    // ? IndexOf
+    console.log("%cMétodo indexOf", dictionaryColors.setColor("methodTitle"));
+
+    console.log("%c" + oList.indexOf(1), dictionaryColors.setColor("printMessage"));
+    
+    // ! PROBANDO ERRORES DE INDEXOF.
+
+    // Tipo de dato no admitido en esta lista.
+    console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
+    try {
+        oList.indexOf("algo");
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }

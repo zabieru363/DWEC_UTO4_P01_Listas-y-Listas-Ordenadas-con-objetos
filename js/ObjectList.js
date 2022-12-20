@@ -66,4 +66,40 @@ class ObjectList extends List {
         this.#list.splice(index, 0, element);
         return this.size();
     }
+
+    /**
+     * Método que devuelve la posición del elemento que se
+     * le pasa cómo parametro.
+     * @param {*} element El elemento del cuál se quiere obtener su posición.
+     * @returns La posición del elemento, -1 si no lo encuentra.
+     */
+    indexOf(element) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+
+        return this.#list.findIndex(elem => elem === element);
+    }
+
+    /**
+     * Método que devuelve la posición del elemento que se
+     * le pasa cómo parametro pero comenzando por el final.
+     * @param {*} element El elemento del cuál se quiere obtener su posición.
+     * @returns La posición del elemento, -1 si no lo encuentra.
+     */
+    lastIndexOf(element) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+
+        return this.#list.findLastIndex(elem => elem === element);
+    }
 }
