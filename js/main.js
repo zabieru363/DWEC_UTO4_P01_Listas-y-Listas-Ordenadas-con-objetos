@@ -423,15 +423,30 @@ const dictionaryColors = {
     
     // ? RemoveElement
     console.log("%cMétodo removeElement", dictionaryColors.setColor("methodTitle"));
-
+    
     console.log("%c" + oList.removeElement(4), dictionaryColors.setColor("printMessage"));
-
+    
     // ! PROBANDO ERRORES DE REMOVEELEMENT.
     
     // Tipo de dato no admitido en esta lista.
     console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
     try {
         oList.removeElement("algo");
+    } catch(error) {
+        console.error(error);   // Tipo de dato no admitido en esta lista.
+    }
+    
+    // ? Set
+    console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
+    
+    console.log("%c" + oList.set(34, 2), dictionaryColors.setColor("printMessage"));
+
+    // ! PROBANDO ERRORES DE SET.
+    
+    // Tipo de dato no admitido en esta lista.
+    console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
+    try {
+        oList.set("random", 2);
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }

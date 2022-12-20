@@ -128,4 +128,27 @@ class ObjectList extends List {
 
         return removed;
     }
+
+    /**
+     * Método que reemplaza un elemento de la lista por
+     * otro que se le pase cómo parametro en base a su indice.
+     * @param {*} element El elemento nuevo.
+     * @param {*} index La posición donde se quiere empezar a cambiar.
+     * @returns El elemento anterior.
+     */
+    set(element, index) {
+        if(this.isEmpty()) {
+            throw new Error("La lista está vacía.");
+        }
+
+        if(index < 0 || index > this.capacity()) {
+            throw new Error("El indice está fuera de los limites de la lista.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+
+        return this.#list.splice(index, 1, element);
+    }
 }
