@@ -18,6 +18,7 @@ class List {
      * un array.
      */
     constructor(list = []) {
+        if(!new.target) throw new InvalidAccessConstructorException();  // El constructor se crea con new.
         this.#list = list;
     }
 
@@ -53,7 +54,7 @@ class List {
      */
     add(element) {
         if(this.isFull()) {
-            throw new Error("La lista está llena.");
+            throw new ListIsFullException();
         }
         
         this.#list.push(element);
@@ -67,11 +68,11 @@ class List {
      */
     addAt(element, index) {
         if(this.isFull()) {
-            throw new Error("La lista está llena.");
+            throw new ListIsFullException();
         }
 
         if(index < 0 || index > this.#capacity) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         this.#list.splice(index, 0, element);
@@ -86,7 +87,7 @@ class List {
      */
     get(index) {
         if(index < 0 || index > this.#capacity) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         return this.#list.find(function(elem, pos) {
@@ -100,7 +101,7 @@ class List {
      */
     toString() {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         return this.#list.reduce(function(str, elem, index) {
@@ -124,7 +125,7 @@ class List {
      */
     indexOf(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         return this.#list.findIndex(elem => elem === element);
@@ -138,7 +139,7 @@ class List {
      */
     lastIndexOf(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         return this.#list.findLastIndex(elem => elem === element);
@@ -165,7 +166,7 @@ class List {
      */
     firstElement() {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         return this.#list[0];
@@ -177,7 +178,7 @@ class List {
      */
     lastElement() {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         return this.#list[this.#list.length - 1];
@@ -190,11 +191,11 @@ class List {
      */
     remove(index) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(index < 0 || index > this.#capacity) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         return this.#list.splice(index, 1);
@@ -208,7 +209,7 @@ class List {
      */
     removeElement(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         let removed = false;
@@ -231,11 +232,11 @@ class List {
      */
     set(element, index) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(index < 0 || index > this.#capacity) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         return this.#list.splice(index, 1, element);

@@ -21,6 +21,7 @@ class OrderedObjectList extends ObjectList {
      * un array.
      */
     constructor(type, order, list = []) {
+        if(!new.target) throw new InvalidAccessConstructorException();  // El constructor se crea con new.
         super(type, list);
         this.#type = type;
         this.#order = order;
@@ -38,11 +39,11 @@ class OrderedObjectList extends ObjectList {
      */
     add(element) {
         if(this.isFull()) {
-            throw new Error("La lista está llena.");
+            throw new ListIsFullException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
         
         this.#list.push(element);
@@ -54,20 +55,20 @@ class OrderedObjectList extends ObjectList {
      * En esta clase addAt no se implementa.
      */
     addAt() {
-        throw new Error("Este método no está implementado para esta clase.");
+        throw new NotImplementedException();
     }
 
     /**
      * En esta clase lastIndexOf no se implementa.
      */
     lastIndexOf() {
-        throw new Error("Este método no está implementado para esta clase.");
+        throw new NotImplementedException();
     }
 
     /**
      * En esta clase set no se implementa.
      */
     set() {
-        throw new Error("Este método no está implementado para esta clase.");
+        throw new NotImplementedException();
     }
 }

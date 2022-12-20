@@ -20,6 +20,7 @@ class ObjectList extends List {
      * un array.
      */
     constructor(type, list = []) {
+        if(!new.target) throw new InvalidAccessConstructorException();  // El constructor se crea con new.
         super(list);
         this.#type = type;
         this.#list = list;
@@ -34,11 +35,11 @@ class ObjectList extends List {
      */
     add(element) {
         if(this.isFull()) {
-            throw new Error("La lista está llena.");
+            throw new ListIsFullException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
         
         this.#list.push(element);
@@ -53,16 +54,16 @@ class ObjectList extends List {
      */
     addAt(element, index) {
         if(this.isFull()) {
-            throw new Error("La lista está llena.");
+            throw new ListIsFullException();
         }
 
         // Cómo capacity es privado utilizo el método para acceder a su valor.
         if(index < 0 || index > this.capacity()) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
 
         this.#list.splice(index, 0, element);
@@ -78,11 +79,11 @@ class ObjectList extends List {
      */
     indexOf(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
 
         return this.#list.findIndex(elem => elem === element);
@@ -97,11 +98,11 @@ class ObjectList extends List {
      */
     lastIndexOf(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
 
         return this.#list.findLastIndex(elem => elem === element);
@@ -116,11 +117,11 @@ class ObjectList extends List {
      */
     removeElement(element) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
 
         let removed = false;
@@ -144,15 +145,15 @@ class ObjectList extends List {
      */
     set(element, index) {
         if(this.isEmpty()) {
-            throw new Error("La lista está vacía.");
+            throw new ListIsEmptyException();
         }
 
         if(index < 0 || index > this.capacity()) {
-            throw new Error("El indice está fuera de los limites de la lista.");
+            throw new IndexOutOfBoundsListException();
         }
 
         if(this.#type !== typeof element) {
-            throw new Error("Tipo de dato no admitido para esta lista");
+            throw new InvalidTypeException();
         }
 
         return this.#list.splice(index, 1, element);
