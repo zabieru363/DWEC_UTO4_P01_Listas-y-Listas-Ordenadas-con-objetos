@@ -2,8 +2,8 @@
 
 /**
  * Subclase de List que contiene una lista que
- * admite objetos según el tipo de objeto que se
- * le pase al constructor.
+ * solamente admite objetos del tipo que se le
+ * pase en el constructor.
  * @author Javier López
  * @version 1.0
  */
@@ -29,6 +29,7 @@ class ObjectList extends List {
 
     /**
      * Método que añade un elemento a la lista.
+     * Comprueba que el tipo es válido antes de añadir el elemento.
      * @param {*} element El elemento a añadir.
      */
     add(element) {
@@ -45,6 +46,7 @@ class ObjectList extends List {
 
     /**
      * Método que añade un elemento a la lista en la posición especificada.
+     * Comprueba que el tipo es válido antes de añadir el elemento.
      * @param {*} element El elemento a añadir.
      * @param {*} index La posición donde se va a añadir el elemento.
      * @returns El número de elementos de la lista.
@@ -70,6 +72,7 @@ class ObjectList extends List {
     /**
      * Método que devuelve la posición del elemento que se
      * le pasa cómo parametro.
+     * Comprueba que el tipo es válido antes de buscar el elemento.
      * @param {*} element El elemento del cuál se quiere obtener su posición.
      * @returns La posición del elemento, -1 si no lo encuentra.
      */
@@ -88,6 +91,7 @@ class ObjectList extends List {
     /**
      * Método que devuelve la posición del elemento que se
      * le pasa cómo parametro pero comenzando por el final.
+     * Comprueba que el tipo es válido antes de buscar el elemento.
      * @param {*} element El elemento del cuál se quiere obtener su posición.
      * @returns La posición del elemento, -1 si no lo encuentra.
      */
@@ -106,6 +110,7 @@ class ObjectList extends List {
     /**
      * Método que elimina el elemento que se le pasa cómo parametro
      * de la lista.
+     * Comprueba que el tipo es válido antes de eliminar el elemento.
      * @param {*} element El elemento que se quiere eliminar.
      * @returns True si se ha podido eliminar, false si no es así.
      */
@@ -132,6 +137,7 @@ class ObjectList extends List {
     /**
      * Método que reemplaza un elemento de la lista por
      * otro que se le pase cómo parametro en base a su indice.
+     * Comprueba que el tipo es válido antes de modificar el elemento.
      * @param {*} element El elemento nuevo.
      * @param {*} index La posición donde se quiere empezar a cambiar.
      * @returns El elemento anterior.

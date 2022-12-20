@@ -7,7 +7,7 @@
  * @version 1.0
  */
 class List {
-    // Propiedades privadas:
+    // * PROPIEDADES PRIVADAS
     #list;
     #capacity = 5;  // Tamaño máximo de la lista.
 

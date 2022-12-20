@@ -1,14 +1,14 @@
 "use strict";
 
 /**
- * Subclase de List que contiene una lista de objetos
- * a la cuál se le puede pasar una función de ordenamiento.
+ * Subclase de ObjectList que contiene una lista de elementos
+ * de un tipo especificado a la cuál se le puede pasar una función de ordenamiento.
  * @author Javier López
  * @version 1.0
  */
 class OrderedObjectList extends ObjectList {
     // Propiedades privadas.
-    #list = [];
+    #list;
     #type;
     #order;
 
@@ -32,6 +32,8 @@ class OrderedObjectList extends ObjectList {
     /**
      * Método que añade un elemento a la lista. Después
      * de añadir el elemento ordena la lista.
+     * Comprueba que el tipo es válido antes de añadir el elemento.
+     * Ordena la lista, despues de añadir el elemento.
      * @param {*} element El elemento a añadir.
      */
     add(element) {
