@@ -357,10 +357,21 @@ const dictionaryColors = {
     oList.add(2);
     oList.add(3);
     oList.add(4);
+    oList.add(5);
     
     console.log("%cTamaño de la lista ahora " + oList.size() + " elementos.", dictionaryColors.setColor("printMessage"));
     
     // ! ERRORES DE ADD
+
+    // La lista está llena.
+    console.log("%cLa lista está llena.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.add(22);
+    } catch(error) {
+        console.error(error);   // La lista está llena.
+    }
+
+    oList.clear();
     
     // Tipo de dato no admitido en esta lista.
     console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
@@ -380,9 +391,20 @@ const dictionaryColors = {
     console.log("%c" + oList.addAt(2, 1), dictionaryColors.setColor("printMessage"));
     console.log("%c" + oList.addAt(3, 2), dictionaryColors.setColor("printMessage"));
     console.log("%c" + oList.addAt(4, 3), dictionaryColors.setColor("printMessage"));
+    console.log("%c" + oList.addAt(5, 4), dictionaryColors.setColor("printMessage"));
     
     // ! ERRORES DE ADDAT.
-    
+
+    // La lista está llena.
+    console.log("%cLa lista está llena.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.addAt(22, 5);
+    } catch(error) {
+        console.error(error);   // La lista está llena.
+    }
+
+    oList.clear();
+
     // Tipo de dato no admitido en esta lista.
     console.log("%cTipo de dato no admitido en esta lista", dictionaryColors.setColor("errorName"));
     try {
@@ -392,6 +414,12 @@ const dictionaryColors = {
     }
     
     // ? IndexOf
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+    oList.add(5);
+
     console.log("%cMétodo indexOf", dictionaryColors.setColor("methodTitle"));
 
     console.log("%c" + oList.indexOf(1), dictionaryColors.setColor("printMessage"));
@@ -405,6 +433,22 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }
+
+    oList.clear();
+
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.indexOf(2);
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+    oList.add(5);
 
     // ? LastIndexOf
     console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
@@ -420,6 +464,22 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }
+
+    oList.clear();
+
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.lastIndexOf(2);
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+    oList.add(5);
     
     // ? RemoveElement
     console.log("%cMétodo removeElement", dictionaryColors.setColor("methodTitle"));
@@ -435,6 +495,22 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
     }
+
+    oList.clear();
+
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.removeElement(2);
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+    oList.add(5);
     
     // ? Set
     console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
@@ -449,5 +525,29 @@ const dictionaryColors = {
         oList.set("random", 2);
     } catch(error) {
         console.error(error);   // Tipo de dato no admitido en esta lista.
+    }
+
+    oList.clear();
+
+    // La lista está vacía.
+    console.log("%cLa lista está vacía.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.set(32, 2);
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
+    oList.add(1);
+    oList.add(2);
+    oList.add(3);
+    oList.add(4);
+    oList.add(5);
+
+    // El indice está fuera de los limites de la lista.
+    console.log("%cEl indice está fuera de los limites de la lista.", dictionaryColors.setColor("errorName"));
+    try {
+        oList.set(32, 20);
+    } catch(error) {
+        console.error(error);   // El indice está fuera de los limites de la lista.
     }
 })();
