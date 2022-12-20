@@ -42,4 +42,28 @@ class ObjectList extends List {
         
         this.#list.push(element);
     }
+
+    /**
+     * Método que añade un elemento a la lista en la posición especificada.
+     * @param {*} element El elemento a añadir.
+     * @param {*} index La posición donde se va a añadir el elemento.
+     * @returns El número de elementos de la lista.
+     */
+    addAt(element, index) {
+        if(this.isFull()) {
+            throw new Error("La lista está llena.");
+        }
+
+        // Cómo capacity es privado utilizo el método para acceder a su valor.
+        if(index < 0 || index > this.capacity()) {
+            throw new Error("El indice está fuera de los limites de la lista.");
+        }
+
+        if(this.#tyoe !== typeof element) {
+            throw new Error("Tipo de dato no admitido para esta lista");
+        }
+
+        this.#list.splice(index, 0, element);
+        return this.size();
+    }
 }
