@@ -312,7 +312,7 @@ const dictionaryColors = {
         publicationDate: new Date(2014, 3, 4),
         price: 20.45,
     }
-
+    
     list2.add(book);
     console.log(list2.toString());
 })();

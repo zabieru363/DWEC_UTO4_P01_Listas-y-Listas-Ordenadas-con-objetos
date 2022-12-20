@@ -104,22 +104,11 @@ class List {
         }
 
         return this.#list.reduce(function(str, elem, index) {
-            if(elem.ISBN || elem.title) {
-               return index !== 0 ? 
-                str + "ISBN: " +  elem.ISBN + " - " 
-                + "TITLE: " +   elem.title + " - "
-                + "AUTHOR: " + elem.author + " - "
-                + "DATE: " + elem.publicationDate + " - "
-                + "PRICE: " + elem.price + "\n"
-
-                : str + "ISBN: " +  elem.ISBN + " " 
-                + "TITLE: " +   elem.title + " "
-                + "AUTHOR: " + elem.author + " "
-                + "DATE: " + elem.publicationDate + " "
-                + "PRICE: " + elem.price; 
+            if(typeof elem === "object") {
+                return elem.toString();
             } else {
                 return index !== 0 ? 
-                    str + " - " +  elem  :
+                    str + " - " +  elem :
                     str + " " + elem;
             }
         }, "");
@@ -137,7 +126,7 @@ class List {
         }
 
         if(typeof element === "object") {
-            return this.#list.findIndex(elem => elem.ISBN === element.ISBN);
+            return this.#list.findIndex(elem => elem === element);
         } else {
             return this.#list.indexOf(element);
         }
@@ -155,7 +144,7 @@ class List {
         }
 
         if(typeof element === "object") {
-            return this.#list.findLastIndex(elem => elem.ISBN === element.ISBN);
+            return this.#list.findLastIndex(elem => elem === element);
         } else {
             return this.#list.lastIndexOf(element);
         }
