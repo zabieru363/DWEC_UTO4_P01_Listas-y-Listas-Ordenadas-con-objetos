@@ -104,7 +104,7 @@ class List {
         }
 
         return this.#list.reduce(function(str, elem, index) {
-            if(!elem instanceof Object) {
+            if(!(elem instanceof Object)) {
                 return index !== 0 ? 
                     str + " - " + elem.toString() :
                     str + " " + elem.toString();

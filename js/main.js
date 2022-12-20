@@ -551,30 +551,43 @@ const dictionaryColors = {
         console.error(error);   // El indice está fuera de los limites de la lista.
     }
 
+    console.log("%cMétodo toString", dictionaryColors.setColor("printMessage"));
+    console.log(oList.toString());
+
     // * PROBANDO OBJETO ORDEREDOBJECTLIST
 
     // Aquí creo la función de ordenamiento que utilizaré
-    const orderFunction = function(a, b) {
-        // Si es un objeto
-        if(a instanceof Object) {
-            // Ordenaremos por la primera propiedad:
-            const first = Object.keys(a)[0];    // Guardamos la primera propiedad del objeto.
+    const orderFunction = function(array) {
+        array.sort(function(a, b) {
+            // Si es un objeto
+            if(a instanceof Object) {
+                // Ordenaremos por la primera propiedad:
+                const first = Object.keys(a)[0];    // Guardamos la primera propiedad del objeto.
 
-            if(typeof first === "string") {
-                return a.first.localeCompare(b.first);
-            } else {
+                if(typeof first === "string") {
+                    return a.first.localeCompare(b.first);
+                } else {
+                    return a - b;
+                }
+            }
+
+            if(typeof a === "string") {
+                return a.localeCompare(b);
+            }
+
+            if(typeof a === "number") {
                 return a - b;
             }
-        }
-
-        if(typeof a === "string") {
-            return a.localeCompare(b);
-        }
-
-        if(typeof a === "number") {
-            return a - b;
-        }
+        });
     };
 
+    console.log("%cPROBANDO OBJETO ORDEREDOBJECTLIST", dictionaryColors.setColor("className"));
     const orderedList = new OrderedObjectList("string", orderFunction);
+
+    orderedList.add("Javier");
+    orderedList.add("Marta");
+    orderedList.add("Antonio");
+    orderedList.add("Zabieru");
+
+    console.log(orderedList.toString());
 })();

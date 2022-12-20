@@ -10,7 +10,7 @@
 class ObjectList extends List {
     // Propiedades privadas.
     #list;
-    #tyoe;
+    #type;
 
     /**
      * Constructor de la clase.
@@ -21,7 +21,7 @@ class ObjectList extends List {
      */
     constructor(type, list = []) {
         super(list);
-        this.#tyoe = type;
+        this.#type = type;
         this.#list = list;
     }
 
@@ -36,7 +36,7 @@ class ObjectList extends List {
             throw new Error("La lista está llena.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
         
@@ -59,7 +59,7 @@ class ObjectList extends List {
             throw new Error("El indice está fuera de los limites de la lista.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
 
@@ -78,7 +78,7 @@ class ObjectList extends List {
             throw new Error("La lista está vacía.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
 
@@ -96,7 +96,7 @@ class ObjectList extends List {
             throw new Error("La lista está vacía.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
 
@@ -114,7 +114,7 @@ class ObjectList extends List {
             throw new Error("La lista está vacía.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
 
@@ -145,7 +145,7 @@ class ObjectList extends List {
             throw new Error("El indice está fuera de los limites de la lista.");
         }
 
-        if(this.#tyoe !== typeof element) {
+        if(this.#type !== typeof element) {
             throw new Error("Tipo de dato no admitido para esta lista");
         }
 
