@@ -315,6 +315,11 @@ const dictionaryColors = {
         author: "Rafael Gómez Blanes",
         publicationDate: new Date(2014, 3, 4),
         price: 20.45,
+
+        toString() {
+            return this.ISBN + " " + this.title + " " +
+            this.author + " " + this.publicationDate + " " + this.price;
+        }
     };
     
     const book2 = {
@@ -323,6 +328,11 @@ const dictionaryColors = {
         author: "Karen M. McManus",
         publicationDate: new Date(2018, 5, 22),
         price: 18,
+
+        toString() {
+            return this.ISBN + " " + this.title + " " +
+            this.author + " " + this.publicationDate + " " + this.price;
+        }
     };
     
     list2.add(book);
@@ -565,7 +575,7 @@ const dictionaryColors = {
                 const first = Object.keys(a)[0];    // Guardamos la primera propiedad del objeto.
 
                 if(typeof first === "string") {
-                    return a.first.localeCompare(b.first);
+                    return a[first].localeCompare(b[first]);
                 } else {
                     return a - b;
                 }
@@ -582,12 +592,10 @@ const dictionaryColors = {
     };
 
     console.log("%cPROBANDO OBJETO ORDEREDOBJECTLIST", dictionaryColors.setColor("className"));
-    const orderedList = new OrderedObjectList("string", orderFunction);
+    const orderedList = new OrderedObjectList("object", orderFunction);
 
-    orderedList.add("Javier");
-    orderedList.add("Marta");
-    orderedList.add("Antonio");
-    orderedList.add("Zabieru");
+    orderedList.add(book);
+    orderedList.add(book2);
 
     console.log(orderedList.toString());
 })();
