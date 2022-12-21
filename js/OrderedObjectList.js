@@ -59,6 +59,7 @@ class OrderedObjectList extends ObjectList {
 
     /**
      * Método que imprime la lista en formato cadena.
+     * Ordena la lista antes de mostrarla.
      * @returns La lista en formato cadena.
      */
     toString() {

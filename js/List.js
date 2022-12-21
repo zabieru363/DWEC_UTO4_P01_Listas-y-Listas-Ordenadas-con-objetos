@@ -86,6 +86,10 @@ class List {
      * @returns El elemento en base a la posición.
      */
     get(index) {
+        if(this.isEmpty()) {
+            throw new ListIsEmptyException();
+        }
+        
         if(index < 0 || index > this.#capacity) {
             throw new IndexOutOfBoundsListException();
         }
