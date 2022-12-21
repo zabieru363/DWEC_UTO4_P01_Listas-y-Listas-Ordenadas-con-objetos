@@ -57,7 +57,7 @@ class List {
             throw new ListIsFullException();
         }
         
-        this.#list.push(element);
+        return this.#list.push(element);
     }
 
     /**

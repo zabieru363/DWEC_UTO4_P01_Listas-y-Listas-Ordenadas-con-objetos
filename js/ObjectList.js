@@ -42,7 +42,7 @@ class ObjectList extends List {
             throw new InvalidTypeException();
         }
         
-        this.#list.push(element);
+        return this.#list.push(element);
     }
 
     /**

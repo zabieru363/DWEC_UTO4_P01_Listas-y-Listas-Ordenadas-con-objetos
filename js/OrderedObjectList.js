@@ -47,8 +47,9 @@ class OrderedObjectList extends ObjectList {
         }
         
         this.#list.push(element);
-
         this.#order(this.#list);
+
+        return this.#list.size();
     }
 
     /**
