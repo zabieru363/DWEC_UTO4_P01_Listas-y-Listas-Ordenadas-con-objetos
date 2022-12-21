@@ -20,6 +20,15 @@ const dictionaryColors = {
     // Creando una lista:
     const list = new List();
 
+    console.log("%cProbando a instanciar la clase sin new.", dictionaryColors.setColor("printMessage"));
+    
+    // ! No sale el mensaje que deberia porque ya hay una excepción TypeError que solventa ese problema.
+    try {
+        const noValid = List();
+    }catch(error) {
+        console.error(error); 
+    }
+
     console.log("%cPROBANDO OBJETO LIST", dictionaryColors.setColor("className"));
 
     // * PROBANDO MÉTODOS DEL OBJETO LIST
@@ -357,11 +366,18 @@ const dictionaryColors = {
     
     const oList = new ObjectList("number");
 
+    console.log("%cProbando a instanciar la clase sin new.", dictionaryColors.setColor("printMessage"));
+    // Porbando a instanciar esta clase sin el new.
+    try {
+        const noValid2 = ObjectList();
+    } catch(error) {
+        console.error(error);
+    }
+
     // ! Solo probaré los métodos que he necesitado sobreescribir.
     
     // ? Add
     console.log("%cMétodo add", dictionaryColors.setColor("methodTitle"));
-    
     // Añadiendo elementos que si son admitidos:
     oList.add(1);
     oList.add(2);
@@ -562,7 +578,7 @@ const dictionaryColors = {
     }
     
     console.log("%cMétodo toString", dictionaryColors.setColor("printMessage"));
-    console.log(oList.toString());
+    console.log("%c" + oList.toString(), dictionaryColors.setColor("printMessage"));
     
     // * PROBANDO OBJETO ORDEREDOBJECTLIST
     
@@ -594,6 +610,14 @@ const dictionaryColors = {
     console.log("%cPROBANDO OBJETO ORDEREDOBJECTLIST", dictionaryColors.setColor("className"));
     
     const orderedList = new OrderedObjectList("string", orderFunction);
+
+    console.log("%cProbando a instanciar la clase sin new.", dictionaryColors.setColor("printMessage"));
+
+    try {
+        const noValid3 = OrderedObjectList();
+    }catch(error) {
+        console.error(error);
+    }
     
     // ? Add
     console.log("%cMétodo add", dictionaryColors.setColor("methodTitle"));
@@ -640,7 +664,6 @@ const dictionaryColors = {
     
     // ? Addat
     console.log("%cMétodo addAt", dictionaryColors.setColor("methodTitle"));
-
     try {
         orderedList.addAt();
     } catch(error) {
@@ -649,7 +672,6 @@ const dictionaryColors = {
 
     // ? LastIndexOf
     console.log("%cMétodo lastIndexOf", dictionaryColors.setColor("methodTitle"));
-
     try {
         orderedList.lastIndexOf();
     } catch(error) {
@@ -658,7 +680,6 @@ const dictionaryColors = {
 
     // ? Set
     console.log("%cMétodo set", dictionaryColors.setColor("methodTitle"));
-
     try {
         orderedList.set();
     } catch(error) {
