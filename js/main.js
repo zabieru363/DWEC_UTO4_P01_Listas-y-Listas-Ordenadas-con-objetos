@@ -17,6 +17,33 @@ const dictionaryColors = {
 
 // ! Función de testeo.
 (function() {
+    // * Aqui creo un par de objetos book para comprobar el funcionamiento de la lista.
+    const book = {
+        ISBN: "914-46-6086-292-7",
+        title: "El libro negro del programador",
+        author: "Rafael Gómez Blanes",
+        publicationDate: new Date(2014, 3, 4),
+        price: 20.45,
+
+        toString() {
+            return this.ISBN + " " + this.title + " " +
+            this.author + " " + this.publicationDate + " " + this.price;
+        }
+    };
+    
+    const book2 = {
+        ISBN: "411-06-3922-591-3",
+        title: "Un nuevo thriller trepidante",
+        author: "Karen M. McManus",
+        publicationDate: new Date(2018, 5, 22),
+        price: 18,
+
+        toString() {
+            return this.ISBN + " " + this.title + " " +
+            this.author + " " + this.publicationDate + " " + this.price;
+        }
+    };
+
     // Creando una lista:
     const list = new List();
 
@@ -331,32 +358,6 @@ const dictionaryColors = {
     console.log("%cPROBANDO OBJETO LIST AÑADIENDO OBJETOS", dictionaryColors.setColor("className"));
     
     const list2 = new List();
-    
-    const book = {
-        ISBN: "914-46-6086-292-7",
-        title: "El libro negro del programador",
-        author: "Rafael Gómez Blanes",
-        publicationDate: new Date(2014, 3, 4),
-        price: 20.45,
-
-        toString() {
-            return this.ISBN + " " + this.title + " " +
-            this.author + " " + this.publicationDate + " " + this.price;
-        }
-    };
-    
-    const book2 = {
-        ISBN: "411-06-3922-591-3",
-        title: "Un nuevo thriller trepidante",
-        author: "Karen M. McManus",
-        publicationDate: new Date(2018, 5, 22),
-        price: 18,
-
-        toString() {
-            return this.ISBN + " " + this.title + " " +
-            this.author + " " + this.publicationDate + " " + this.price;
-        }
-    };
     
     list2.add(book);
     list2.add("Javier");
