@@ -685,4 +685,16 @@ const dictionaryColors = {
     } catch(error) {
         console.error(error);   // Este método no está implementado para esta clase.
     }
+
+    console.log("%cUSANDO UN ARRAY YA CONSTRUIDO", dictionaryColors.setColor("className"));
+
+    const example = ["nombre1", "nombre2", "nombre3", "nombre4"];
+
+    // Esta vez le pasamos a la instancia un array creado ya previamente.
+    const orderedList2 = new OrderedObjectList("string", orderFunction, example);
+
+    console.log("%cUtilizando algunos métodos para demostrar su funcionamiento:", dictionaryColors.setColor("printMessage"));
+    console.log("%cElemento " + orderedList2.get(2), dictionaryColors.setColor("printMessage"));
+
+    
 })();

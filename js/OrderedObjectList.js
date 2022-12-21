@@ -48,8 +48,6 @@ class OrderedObjectList extends ObjectList {
         
         this.#list.push(element);
         this.#order(this.#list);
-
-        return this.#list.size();
     }
 
     /**
@@ -57,6 +55,31 @@ class OrderedObjectList extends ObjectList {
      */
     addAt() {
         throw new NotImplementedException();
+    }
+
+    /**
+     * Método que imprime la lista en formato cadena.
+     * @returns La lista en formato cadena.
+     */
+    toString() {
+        if(this.isEmpty()) {
+            throw new ListIsEmptyException();
+        }
+
+        // Ordenamos otra vez por si se da el caso de que se pase un array al constructor.
+        this.#order(this.#list);
+
+        return this.#list.reduce(function(str, elem, index) {
+            if(!(elem instanceof Object)) {
+                return index !== 0 ? 
+                    str + " - " + elem.toString() :
+                    str + " " + elem.toString();
+            } else {
+                return index !== 0 ? 
+                    str + " - " +  elem :
+                    str + " " + elem;
+            }
+        }, "");
     }
 
     /**
