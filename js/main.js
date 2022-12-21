@@ -688,7 +688,7 @@ const dictionaryColors = {
 
     console.log("%cUSANDO UN ARRAY YA CONSTRUIDO", dictionaryColors.setColor("className"));
 
-    const example = ["nombre1", "nombre2", "nombre3", "nombre4"];
+    const example = ["xnombre1", "anombre2", "cnombre3", "pnombre4"];
 
     // Esta vez le pasamos a la instancia un array creado ya previamente.
     const orderedList2 = new OrderedObjectList("string", orderFunction, example);
@@ -696,5 +696,5 @@ const dictionaryColors = {
     console.log("%cUtilizando algunos métodos para demostrar su funcionamiento:", dictionaryColors.setColor("printMessage"));
     console.log("%cElemento " + orderedList2.get(2), dictionaryColors.setColor("printMessage"));
 
-    
+    console.log("%c" + orderedList2.toString(), dictionaryColors.setColor("printMessage"));
 })();
