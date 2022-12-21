@@ -115,7 +115,17 @@ const dictionaryColors = {
     console.log("%c" + list.get(1), dictionaryColors.setColor("printMessage"));   // María
     
     // ! PROBANDO ERRORES DE GET.
-    
+
+    list.clear();
+
+    // La lista está vacía.
+    console.log("%cLa lista está vacía..", dictionaryColors.setColor("errorName"));
+    try {
+        console.log(list.get(0));
+    } catch(error) {
+        console.error(error);   // La lista está vacía.
+    }
+
     // El indice está fuera de los limites de la lista.
     console.log("%cEl indice está fuera de los límites de la lista.", dictionaryColors.setColor("errorName"));
     try {
@@ -127,6 +137,10 @@ const dictionaryColors = {
     // El elemento no existe en la lista.
     console.log("%cEl elemento no existe en la lista.", dictionaryColors.setColor("errorName"));
     console.log(typeof list.get(3) === "undefined" ? "No encontrado" : ""); // No encontrado.
+
+    list.add("Javier");
+    list.add("María");
+    list.add("Fernando");
     
     // ? ToString
     console.log("%cMétodo toString", dictionaryColors.setColor("methodTitle"));
